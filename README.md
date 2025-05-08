@@ -13,7 +13,7 @@
 ## 🛠 Tech Stack
 
 - **Backend**: Laravel 10+
-- **Frontend**: Blade, Tailwind CSS (optional)
+- **Frontend**: Blade
 - **Database**: MySQL / MariaDB (or any Laravel-supported DB)
 - **Deployment**: Artisan, Laravel Serve, or any PHP-compatible server
 
