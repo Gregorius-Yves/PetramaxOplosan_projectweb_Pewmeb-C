@@ -4,7 +4,7 @@
     <title>Debug</title>
 </head>
 <body>
-    <h1>Custom debug page</h1>
+    <h1>This is the landing page</h1>
 </body>
 </html>
 
