@@ -9,6 +9,14 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/explore', function () {
+    return view('explore');
+});
+
+Route::get('/categories', function () {
+    return view('categories');
+});
+
 Route::get('/', [\App\Http\Controllers\LandingController::class, 'index']);
 
 require __DIR__.'/auth.php';
