@@ -17,6 +17,10 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
 Route::get('/', [\App\Http\Controllers\LandingController::class, 'index']);
 
 require __DIR__.'/auth.php';
