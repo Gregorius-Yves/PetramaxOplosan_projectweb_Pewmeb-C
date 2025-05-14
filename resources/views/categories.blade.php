@@ -17,7 +17,7 @@
             <span class="text-lg font-bold text-orange-600">inaRISK Web</span>
         </div>
         <!-- Tombol Akses Profil -->
-    <a href="{{ route('profile') }}">
+    <a href="{{ route('settings') }}">
         <div class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-600">
                 <path stroke-linecap="round" stroke-linejoin="round"
