@@ -21,6 +21,14 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
+Route::get('/feedback', function () {
+    return view('feedback');
+})->middleware('auth');
+
+Route::get('/map', function () {
+    return view('map');
+})->middleware('auth');
+
 Route::get('/', [\App\Http\Controllers\LandingController::class, 'index']);
 
 require __DIR__.'/auth.php';
