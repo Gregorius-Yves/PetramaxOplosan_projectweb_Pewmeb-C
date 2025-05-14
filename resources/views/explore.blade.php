@@ -8,59 +8,83 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 </head>
-<body class="bg-white font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-white font-sans antialiased flex flex-col min-h-screen pb-24">
 
-    {{-- 🔹 Header --}}
-    <header class="flex justify-end items-center p-4">
-        <a href="{{ route('profile') }}">
-            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-                 viewBox="0 0 24 24">
+    {{-- Navbar --}}
+    <header class="flex justify-between items-center px-6 py-4 shadow-md">
+        <div class="flex items-center space-x-2">
+            <img src="{{ asset('img/inarisk-logo.png') }}" alt="inaRISK Logo" class="h-8 w-8">
+            <span class="text-lg font-bold text-orange-600">inaRISK Web</span>
+        </div>
+        <!-- Tombol Akses Profil -->
+    <a href="{{ route('profile') }}">
+        <div class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-600">
                 <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M5.121 17.804A12.042 12.042 0 0112 15c2.21 0 4.264.636 5.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 1115 0v.75H4.5v-.75z" />
             </svg>
-        </a>
+        </div>
+    </a>
     </header>
 
-    {{-- 🔄 Top Image Carousel --}}
-    <section class="px-4 mb-6">
+    {{-- Top Image Carousel --}}
+    <section class="px-4 mt-4 mb-6">
+    <div class="relative">
         <div class="swiper mySwiper rounded-xl overflow-hidden bg-orange-100">
+            <!-- ✅ Wajib: swiper-wrapper sebagai pembungkus semua swiper-slide -->
             <div class="swiper-wrapper">
-                <div class="swiper-slide flex justify-center items-center h-40 md:h-60">
-                    <img src="{{ asset('img/placeholder.png') }}" class="object-cover w-full h-full" alt="Slide 1">
+                <div class="swiper-slide">
+                    <div class="w-full h-40 md:h-60">
+                        <img src="{{ asset('img/GloomySkyBoat.jpg') }}" class="w-full h-full object-cover object-center" alt="Slide 1">
+                    </div>
                 </div>
-                <div class="swiper-slide flex justify-center items-center h-40 md:h-60">
-                    <img src="{{ asset('img/placeholder.png') }}" class="object-cover w-full h-full" alt="Slide 2">
+                <div class="swiper-slide">
+                    <div class="w-full h-40 md:h-60">
+                        <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover object-center" alt="Slide 2">
+                    </div>
                 </div>
-                <div class="swiper-slide flex justify-center items-center h-40 md:h-60">
-                    <img src="{{ asset('img/placeholder.png') }}" class="object-cover w-full h-full" alt="Slide 3">
+                <div class="swiper-slide">
+                    <div class="w-full h-40 md:h-60">
+                        <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover object-center" alt="Slide 3">
+                    </div>
                 </div>
             </div>
-            <div class="swiper-pagination -mt-6 text-center"></div>
-        </div>
-    </section>
 
-    {{-- 🌦 Cuaca Indonesia --}}
-    <section class="px-4 mb-8">
-        <div class="flex justify-between items-center mb-2">
-            <h2 class="text-lg font-semibold text-gray-800">Cuaca Indonesia</h2>
-            <a href="#" class="text-sm text-blue-600 font-medium hover:underline">See more</a>
+            <!-- Pagination -->
+            <div class="swiper-pagination absolute bottom-2 w-full text-center z-10"></div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-prev text-orange-600"></div>
+            <div class="swiper-button-next text-orange-600"></div>
         </div>
-        <div class="swiper cuacaSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide w-44 h-28 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <img src="{{ asset('img/placeholder.png') }}" class="w-16 h-16" alt="Cuaca 1">
-                </div>
-                <div class="swiper-slide w-44 h-28 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <img src="{{ asset('img/placeholder.png') }}" class="w-16 h-16" alt="Cuaca 2">
-                </div>
-                <div class="swiper-slide w-44 h-28 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <img src="{{ asset('img/placeholder.png') }}" class="w-16 h-16" alt="Cuaca 3">
-                </div>
+    </div>
+</section>
+
+
+
+    {{-- Cuaca Indonesia --}}
+<section class="px-4 mb-8">
+    <div class="flex justify-between items-center mb-2">
+        <h2 class="text-lg font-bold text-black">Cuaca Indonesia</h2>
+        <a href="#" class="text-sm text-blue-600 font-medium hover:underline">See more</a>
+    </div>
+    <div class="swiper cuacaSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide w-28 h-28 bg-blue-100 rounded-lg flex items-center justify-center overflow-hidden">
+                <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover" alt="Cuaca 1" style="object-fit: cover;">
+            </div>
+            <div class="swiper-slide w-28 h-28 bg-blue-100 rounded-lg flex items-center justify-center overflow-hidden">
+                <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover" alt="Cuaca 2" style="object-fit: cover;">
+            </div>
+            <div class="swiper-slide w-28 h-28 bg-blue-100 rounded-lg flex items-center justify-center overflow-hidden">
+                <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover" alt="Cuaca 3" style="object-fit: cover;">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    {{-- 🔻 Bottom Navigation Bar --}}
+
+    {{-- Bottom Navigation Bar --}}
     <nav class="border-t border-gray-200 bg-white fixed bottom-0 left-0 w-full flex justify-around py-2 z-50">
         <a href="{{ url('/explore') }}" class="flex flex-col items-center text-orange-600 font-semibold">
             <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2"
@@ -90,24 +114,28 @@
         </a>
     </nav>
 
-    {{-- 🧠 Swiper Init --}}
+    {{-- Swiper Init --}}
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Swiper(".mySwiper", {
-                loop: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            });
+    document.addEventListener('DOMContentLoaded', function () {
+        new Swiper(".mySwiper", {
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 
-            new Swiper(".cuacaSwiper", {
-                slidesPerView: 2.2,
-                spaceBetween: 12,
-                freeMode: true,
-            });
+        new Swiper(".cuacaSwiper", {
+            slidesPerView: 2.2,
+            spaceBetween: 12,
+            freeMode: true,
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
-
