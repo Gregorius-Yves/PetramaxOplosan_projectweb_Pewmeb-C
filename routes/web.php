@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginQueryController;
 
+Route::get('/login', [LoginQueryController::class, 'showLogin'])->name('login');
+Route::post('/login', [LoginQueryController::class, 'login']);
+Route::get('/register', [LoginQueryController::class, 'showRegister']);
+Route::post('/register', [LoginQueryController::class, 'register']);
+Route::post('/logout', [LoginQueryController::class, 'logout']);
 Route::redirect('/laravel/login', '/login')->name('login');
 Route::redirect('/laravel/register', '/register')->name('register');
 
@@ -28,6 +34,15 @@ Route::get('/feedback', function () {
 Route::get('/map', function () {
     return view('map');
 })->middleware('auth');
+
+Route::get('/settings', function () {
+    return view('settings.settings');
+});
+
+Route::get('/settings/editprofile', function () {
+    return view('settings.editprofile');
+});
+
 
 Route::get('/', [\App\Http\Controllers\LandingController::class, 'index']);
 
