@@ -27,12 +27,12 @@
     </a>
     </header>
 
-    {{-- 🔍 Search Bar --}}
+    {{-- Search Bar --}}
     <div class="p-4">
         <input type="text" placeholder="Search..." class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400" />
     </div>
 
-    {{-- 🔘 Category Bubble Swipe --}}
+    {{--Category Bubble Swipe --}}
     <div class="px-4 mb-4">
         <div class="swiper categorySwiper">
             <div class="swiper-wrapper space-x-2">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    {{-- ⭐ Famous Section --}}
+    {{-- Famous Section --}}
 <div class="flex justify-between items-center px-4 mb-2">
     <h2 class="text-lg font-semibold text-gray-800">Famous</h2>
     <a href="#" class="text-sm text-orange-600 hover:underline">See more</a>
@@ -70,7 +70,7 @@
     </div>
 </div>
 
-{{-- 📰 Recent News Section --}}
+{{-- Recent News Section --}}
 <div class="flex justify-between items-center px-4 mb-2">
     <h2 class="text-lg font-semibold text-gray-800">Recent News</h2>
     <a href="#" class="text-sm text-orange-600 hover:underline">See more</a>
@@ -93,7 +93,7 @@
     </div>
 </div>
 
-    {{-- 🧠 Swiper Initialization --}}
+    {{-- Swiper Initialization --}}
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             new Swiper(".categorySwiper", {
