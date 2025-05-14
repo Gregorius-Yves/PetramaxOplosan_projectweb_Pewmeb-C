@@ -23,10 +23,6 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
-
 Route::get('/feedback', function () {
     return view('feedback');
 })->middleware('auth');
@@ -37,12 +33,15 @@ Route::get('/map', function () {
 
 Route::get('/settings', function () {
     return view('settings.settings');
-});
+})->name('settings');
 
 Route::get('/settings/editprofile', function () {
     return view('settings.editprofile');
 });
 
+Route::get('/settings/feedback', function () {
+    return view('settings.feedback');
+})->name('feedback');
 
 Route::get('/', [\App\Http\Controllers\LandingController::class, 'index']);
 
