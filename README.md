@@ -1,6 +1,6 @@
-# InfoBencanaID 🌋🌊
+# InaRisk 🌋🌊
 
-**InfoBencanaID** is a Laravel-based web application that delivers real-time information and messages about ongoing natural disasters across Indonesia. The goal is to keep citizens and communities informed through clear updates, enabling faster response and greater public awareness.
+**InaRisk** is a Laravel-based web application that delivers real-time information and messages about ongoing natural disasters across Indonesia. The goal is to keep citizens and communities informed through clear updates, enabling faster response and greater public awareness.
 
 ## 🚀 Features
 
