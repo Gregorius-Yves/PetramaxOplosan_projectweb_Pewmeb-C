@@ -21,8 +21,8 @@ class LoginQueryController extends Controller
     public function register(Request $request) {
         $request -> validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8'
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8|confirmed'
         ]);
 
         User::create([

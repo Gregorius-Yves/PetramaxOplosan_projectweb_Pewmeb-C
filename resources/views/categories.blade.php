@@ -14,8 +14,8 @@
     <header class="flex justify-between items-center px-6 py-4 shadow-md">
         <div class="flex items-center space-x-2">
             <img src="{{ asset('img/inarisk-logo.png') }}" alt="inaRISK Logo" class="h-8 w-8">
-            <span class="text-lg font-bold text-orange-600">inaRISK Web</span>
-        </div>
+	    <a href="{{ url('/explore') }}" class="text-lg font-bold text-orange-600 hover:underline">inaRISK Web</a>
+	</div>
         <!-- Tombol Akses Profil -->
     <a href="{{ route('settings') }}">
         <div class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
@@ -58,7 +58,7 @@
         <div class="swiper-slide !w-[250px] shrink-0 bg-gray-50 rounded-xl shadow p-3">
             <div class="relative rounded-xl overflow-hidden bg-gray-800 h-32 mb-2 flex items-center justify-center">
                 <span class="absolute top-2 right-2 bg-orange-600 text-white text-xs px-2 py-0.5 rounded-full">MAR 05</span>
-                <img src="{{ asset('img/placeholder.png') }}" alt="event" class="h-12 w-12 opacity-60" />
+                <img src="{{ asset('img/placeholder2.png') }}" alt="event" class="h-12 w-12 opacity-60" />
             </div>
             <div class="text-sm font-semibold">{{ $event[0] }}</div>
             <div class="text-sm text-gray-500">{{ $event[1] }}</div>
@@ -81,7 +81,7 @@
         <div class="swiper-slide !w-[250px] shrink-0 bg-gray-50 rounded-xl shadow p-3">
             <div class="relative rounded-xl overflow-hidden bg-gray-800 h-32 mb-2 flex items-center justify-center">
                 <span class="absolute top-2 right-2 bg-orange-600 text-white text-xs px-2 py-0.5 rounded-full">MAR 05</span>
-                <img src="{{ asset('img/placeholder.png') }}" alt="news" class="h-12 w-12 opacity-60" />
+                <img src="{{ asset('img/placeholder1.png') }}" alt="news" class="h-12 w-12 opacity-60" />
             </div>
             <div class="text-sm font-semibold">{{ $news[0] }}</div>
             <div class="text-sm text-gray-500">{{ $news[1] }}</div>

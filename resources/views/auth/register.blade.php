@@ -53,11 +53,28 @@
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                     <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-orange-500 focus:border-orange-500">
                 </div>
-                <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700">Kata Sandi</label>
-                    <input type="password" name="password" id="password" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-orange-500 focus:border-orange-500">
-                </div>
-                <div class="pt-4">
+		<div>
+		    <label for="password" class="block text-sm font-medium text-gray-700">Kata Sandi</label>
+    		    <input type="password" name="password" id="password" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+    			@if ($errors->has('password'))
+                    <div class="text-red-600 text-sm mt-1">
+            {{ $errors->first('password') }}
+        	    </div>
+    		   @endif
+		</div>
+
+		<div>
+    		    <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Konfirmasi Kata Sandi</label>
+    		    <input type="password" name="password_confirmation" id="password_confirmation" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-orange-500 focus:border-orange-500">
+		       @if ($errors->has('password_confirmation'))
+        	<div class="text-red-600 text-sm mt-1">
+            		{{ $errors->first('password_confirmation') }}
+        	</div>
+    		   @endif
+</div>
+
+
+		<div class="pt-4">
                     <button type="submit" class="w-full bg-orange-500 text-white font-semibold py-2 px-4 rounded hover:bg-orange-600">Daftar</button>
                 </div>
             </form>
