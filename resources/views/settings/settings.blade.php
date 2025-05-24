@@ -23,10 +23,12 @@
             <h1 class="text-2xl font-bold text-orange-600 mb-4">Pengaturan Akun</h1>
 
             <div class="flex flex-col items-center mb-6">
-                <img src="{{ asset('img/default-profile.png') }}" alt="Foto Profil" class="h-24 w-24 rounded-full object-cover mb-4">
-                <h2 class="text-lg font-semibold text-gray-700">Nama User</h2>
-                <p class="text-sm text-gray-500">user@email.com</p>
-            </div>
+		<img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}"
+     alt="Foto Profil"
+     class="h-24 w-24 rounded-full object-cover mb-4">
+		<h2 class="text-lg font-semibold text-gray-700">{{Auth::user()->name}}</h2>
+		<p class="text-sm text-gray-500">{{ Auth::user()->email }}</p>    
+	</div>
 
             <div class="text-center mb-4">
                 <a href="/settings/editprofile" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">Edit Profil</a>
@@ -34,7 +36,13 @@
 
             <div class="text-center">
                 <a href="#" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm">Logout</a>
-            </div>
+	    </div>
+	    <form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <label for="profile_image">Upload Profile Image</label>
+    <input type="file" name="profile_image" id="profile_image" required>
+    <button type="submit">Update</button>
+</form>
         </div>
 
         {{-- Tombol Tambahan di Luar Kotak --}}

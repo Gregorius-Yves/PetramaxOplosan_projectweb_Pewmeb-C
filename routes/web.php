@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginQueryController;
+use App\Http\Controllers\ProfileController;
 
+Route::post('/profile/image/update', [ProfileController::class, 'updateProfileImage'])->name('profile.image.update');
 Route::get('/login', [LoginQueryController::class, 'showLogin'])->name('login');
 Route::post('/login', [LoginQueryController::class, 'login']);
 Route::get('/register', [LoginQueryController::class, 'showRegister']);
