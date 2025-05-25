@@ -28,6 +28,13 @@ Group Name:
 ## ⚙️ Installment
 
 ```bash
+# RUn xampp or Apache/Mysql if you prefer
+On linux:
+sudo /opt/lampp/lampp
+
+On WIndows:
+Open XAMPP, start Apache & MySQL
+
 git clone https://github.com/Gregorius-Yves/PetramaxOplosan_projectweb_Pewmeb-C
 cd PetramaxOplosan_projectweb_Pewmeb-C
 
