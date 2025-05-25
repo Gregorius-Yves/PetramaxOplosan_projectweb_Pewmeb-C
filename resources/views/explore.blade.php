@@ -17,18 +17,15 @@
 	</div>
         <!-- Tombol Akses Profil -->
         <a href="{{ route('settings') }}">
-<<<<<<< HEAD
 	<div class="w-9 h-9 rounded-full overflow-hidden">
     	        <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
 	        </div>
 	</a>
-=======
         	<div class="w-9 h-9 rounded-full overflow-hidden">
     	        	<img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
 		</div>
         </a>
->>>>>>> ffd8a950fef6274fad28546d5c736dcd0f410311
-    </header>
+</header>
 
     {{-- Top Image Carousel --}}
     <section class="px-4 mt-4 mb-6">
