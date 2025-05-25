@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginQueryController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfileController;
 
 Route::post('/profile/image/update', [ProfileController::class, 'updateProfileImage'])->name('profile.image.update');
 Route::get('/login', [LoginQueryController::class, 'showLogin'])->name('login');
@@ -13,7 +12,6 @@ Route::post('/register', [LoginQueryController::class, 'register']);
 Route::post('/logout', [LoginQueryController::class, 'logout']);
 Route::redirect('/laravel/login', '/login')->name('login');
 Route::redirect('/laravel/register', '/register')->name('register');
-Route::redirect('/laravel/logout', '/')->name('logout');
 
 Route::get('/', function () {
     return view('landing');
