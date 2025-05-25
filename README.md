@@ -30,7 +30,7 @@ Group Name:
 ```bash
 # RUn xampp or Apache/Mysql if you prefer
 On linux:
-sudo /opt/lampp/lampp
+/opt/lampp/lampp start
 
 On WIndows:
 Open XAMPP, start Apache & MySQL
