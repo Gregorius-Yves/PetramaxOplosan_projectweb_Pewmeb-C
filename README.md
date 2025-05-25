@@ -2,6 +2,14 @@
 
 **InaRisk** is a Laravel-based web application that delivers real-time information and messages about ongoing natural disasters across Indonesia. The goal is to keep citizens and communities informed through clear updates, enabling faster response and greater public awareness.
 
+This is **NOT** the official InaRISK web source code. This is a Compter Science project and we do not hold any properties.
+
+Group Name:
+- Gregorius Yves Ardhyo Figlio Aviantoro - 235150200111008
+- Christopher Jonathan - 235150201111064
+- Muhammad Alden Prasbawara - 235150201111014
+- Yos - nim
+
 ## 🚀 Features
 
 - 📢 Real-time disaster messages (earthquakes, floods, volcanoes, etc.)
