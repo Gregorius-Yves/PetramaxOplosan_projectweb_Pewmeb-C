@@ -32,7 +32,7 @@
 
             <div class="text-center mb-4">
                 <a href="/settings/editprofile" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">Edit Profil</a>
-<<<<<<< HEAD
+
 	    </div>
 	    <div class="text-center">
     <form method="POST" action="{{ route('logout') }}">
@@ -43,14 +43,12 @@
     </form>
 </div>
 	    <form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-2 mt-4">
-=======
         </div>
 
         <div class="text-center">
                 <a href="#" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm">Logout</a>
 	</div>
 	<form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-2 mt-4">
->>>>>>> ffd8a950fef6274fad28546d5c736dcd0f410311
             @csrf
 
             <label for="profile_image" class="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">
@@ -61,11 +59,8 @@
             <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">
                 Upload Gambar
             </button>
-<<<<<<< HEAD
 	</form>
-=======
         </form>
->>>>>>> ffd8a950fef6274fad28546d5c736dcd0f410311
         </div>
 
         {{-- Tombol Tambahan di Luar Kotak --}}
