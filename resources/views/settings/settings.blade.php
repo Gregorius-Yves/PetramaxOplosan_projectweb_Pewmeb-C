@@ -30,25 +30,19 @@
 		<p class="text-sm text-gray-500">{{ Auth::user()->email }}</p>    
 	</div>
 
-            <div class="text-center mb-4">
-                <a href="/settings/editprofile" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">Edit Profil</a>
-
-	    </div>
-	    <div class="text-center">
+    <div class="text-center mb-4">
+        <a href="/settings/editprofile" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">Edit Profil</a>
+    </div>
+	
+    <div class="text-center">
     <form method="POST" action="{{ route('logout') }}">
         @csrf
         <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm">
             Logout
         </button>
     </form>
-</div>
-	    <form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-2 mt-4">
-        </div>
-
-        <div class="text-center">
-                <a href="#" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm">Logout</a>
-	</div>
-	<form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-2 mt-4">
+    
+    <form action="{{ route('profile.image.update') }}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-2 mt-4">
             @csrf
 
             <label for="profile_image" class="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">
@@ -59,9 +53,10 @@
             <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">
                 Upload Gambar
             </button>
-	</form>
         </form>
-        </div>
+    </div>
+	    
+
 
         {{-- Tombol Tambahan di Luar Kotak --}}
         <div class="flex flex-col space-y-4 w-full max-w-md">
