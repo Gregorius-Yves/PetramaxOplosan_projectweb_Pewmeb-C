@@ -28,18 +28,23 @@ Group Name:
 ## ⚙️ Installment
 
 ```bash
-git clone https://github.com/Gregorius-Yves/proyek-pemweb-c
-cd proyek-pemweb-c
+git clone https://github.com/Gregorius-Yves/PetramaxOplosan_projectweb_Pewmeb-C
+cd PetramaxOplosan_projectweb_Pewmeb-C
 
 # Create .env from scratch or use the example
 cp .env.example .env
 
-# Install dependencies
 composer install
 
-# Generate application key
-php artisan key:generate
+# Run database migration
+php artisan migrate
+
+# Create symlink between storage and public dir
+php artisan storage:link
 
 # Run the development server
 php artisan serve
+
+# Run vite server
+npm run dev
 ```
