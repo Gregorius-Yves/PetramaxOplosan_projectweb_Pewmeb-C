@@ -8,7 +8,7 @@ Group Name:
 - Gregorius Yves Ardhyo Figlio Aviantoro - 235150200111008
 - Christopher Jonathan - 235150201111064
 - Muhammad Alden Prasbawara - 235150201111014
-- Yos - nim
+- Yosua Benedict Parasian - 2351502071111012
 
 ## 🚀 Features
 
