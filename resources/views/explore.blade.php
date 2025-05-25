@@ -31,17 +31,17 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="w-full h-40 md:h-60">
-                        <img src="{{ asset('img/GloomySkyBoat.jpg') }}" class="w-full h-full object-cover object-center" alt="Slide 1">
+                        <img src="{{ asset('img/placeholder3.jpg') }}" class="w-full h-full object-cover object-center" alt="Slide 1">
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="w-full h-40 md:h-60">
-                        <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover object-center" alt="Slide 2">
+                        <img src="{{ asset('img/placeholder4.png') }}" class="w-full h-full object-cover object-center" alt="Slide 2">
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="w-full h-40 md:h-60">
-                        <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover object-center" alt="Slide 3">
+                        <img src="{{ asset('img/placeholder5.png') }}" class="w-full h-full object-cover object-center" alt="Slide 3">
                     </div>
                 </div>
             </div>
@@ -67,13 +67,13 @@
     <div class="swiper cuacaSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide w-28 h-28 bg-blue-100 rounded-lg flex items-center justify-center overflow-hidden">
-                <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover" alt="Cuaca 1" style="object-fit: cover;">
+                <img src="{{ asset('img/placeholder3.png') }}" class="w-full h-full object-cover" alt="Cuaca 1" style="object-fit: cover;">
             </div>
             <div class="swiper-slide w-28 h-28 bg-blue-100 rounded-lg flex items-center justify-center overflow-hidden">
-                <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover" alt="Cuaca 2" style="object-fit: cover;">
+                <img src="{{ asset('img/placeholder4.png') }}" class="w-full h-full object-cover" alt="Cuaca 2" style="object-fit: cover;">
             </div>
             <div class="swiper-slide w-28 h-28 bg-blue-100 rounded-lg flex items-center justify-center overflow-hidden">
-                <img src="{{ asset('img/placeholder.png') }}" class="w-full h-full object-cover" alt="Cuaca 3" style="object-fit: cover;">
+                <img src="{{ asset('img/placeholder5.png') }}" class="w-full h-full object-cover" alt="Cuaca 3" style="object-fit: cover;">
             </div>
         </div>
     </div>
