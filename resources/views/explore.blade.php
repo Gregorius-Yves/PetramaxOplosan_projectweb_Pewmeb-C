@@ -17,15 +17,11 @@
 		<a href="{{ url('/explore') }}" class="text-lg font-bold text-orange-600 hover:underline">inaRISK Web</a>
 	</div>
         <!-- Tombol Akses Profil -->
-        <a href="{{ route('settings') }}">
+    <a href="{{ route('settings') }}">
 	<div class="w-9 h-9 rounded-full overflow-hidden">
-    	        <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
+    	<img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
 	</div>
-	</a>
-        <div class="w-9 h-9 rounded-full overflow-hidden">
-            	<img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
-	</div>
-        </a>
+   </a>
 </header>
 
     {{-- Top Image Carousel --}}
