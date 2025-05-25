@@ -13,13 +13,13 @@
     {{-- Navbar --}}
     <header class="flex justify-between items-center px-6 py-4 shadow-md">
         <div class="flex items-center space-x-2">
-	<a href="{{ url('/explore') }}" class="text-lg font-bold text-orange-600 hover:underline">inaRISK Web</a>
+		<a href="{{ url('/explore') }}" class="text-lg font-bold text-orange-600 hover:underline">inaRISK Web</a>
 	</div>
         <!-- Tombol Akses Profil -->
         <a href="{{ route('settings') }}">
-            <div class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
-	    <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Profile Image" class="w-5 h-5 rounded-full object-cover">
-	   </div>
+        	<div class="w-9 h-9 rounded-full overflow-hidden">
+    	        	<img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
+		</div>
         </a>
     </header>
 
