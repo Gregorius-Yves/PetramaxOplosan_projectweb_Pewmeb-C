@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Categories</title>
@@ -7,6 +8,7 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body class="bg-white font-sans antialiased pb-24">
 
     {{-- Navbar --}}
@@ -32,9 +34,13 @@
 
     {{-- Category Bubble Swipe --}}
     <div class="px-4 mb-4">
-        <div class="swiper categorySwiper">
-            <div class="swiper-wrapper space-x-2">
-                @foreach (['BENCANA ALAM', 'GEMPA BUMI', 'TSUNAMI', 'HUJAN DERAS', 'KEBAKARAN'] as $category)
+        <div class="swiper categorySwiper cursor-grab">
+            <div class="swiper-wrapper">
+                @foreach ([
+                    'BENCANA ALAM', 'GEMPA BUMI', 'TSUNAMI', 'HUJAN DERAS', 'KEBAKARAN',
+                    'BANJIR', 'LONGSOR', 'CUACA EKSTREM', 'GUNUNG API',
+                    'GELOMBANG PANAS', 'ANGIN KENCANG', 'KEKERINGAN', 'GELOMBANG TINGGI'
+                ] as $category)
                 @php
                 $isActive = request('type') === $category;
                 @endphp
@@ -105,7 +111,7 @@
     {{-- Swiper JS --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             new Swiper(".categorySwiper", {
                 slidesPerView: 'auto',
                 spaceBetween: 10,
@@ -124,4 +130,5 @@
         });
     </script>
 </body>
+
 </html>
