@@ -1,2 +1,4 @@
-/storage/*
-public/storage
+./storage/*
+./public/storage
+./.env
+

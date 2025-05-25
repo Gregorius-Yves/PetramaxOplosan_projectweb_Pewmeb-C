@@ -17,10 +17,10 @@
 	</div>
         <!-- Tombol Akses Profil -->
         <a href="{{ route('settings') }}">
-            <div class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
-	    <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Profile Image" class="w-5 h-5 rounded-full object-cover">
-	   </div>
-        </a>
+	<div class="w-9 h-9 rounded-full overflow-hidden">
+    	        <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('img/default-profile.png') }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
+	        </div>
+	</a>
     </header>
 
     {{-- Top Image Carousel --}}
@@ -28,10 +28,10 @@
     <div class="relative">
         <div class="swiper mySwiper rounded-xl overflow-hidden bg-orange-100">
             <!-- ✅ Wajib: swiper-wrapper sebagai pembungkus semua swiper-slide -->
-            <div class="swiper-wrapper">
+           <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="w-full h-40 md:h-60">
-                        <img src="{{ asset('img/placeholder3.jpg') }}" class="w-full h-full object-cover object-center" alt="Slide 1">
+                        <img src="{{ asset('img/placeholder3.png') }}" class="w-full h-full object-cover object-center" alt="Slide 1">
                     </div>
                 </div>
                 <div class="swiper-slide">
