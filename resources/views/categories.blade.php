@@ -35,10 +35,17 @@
         <div class="swiper categorySwiper">
             <div class="swiper-wrapper space-x-2">
                 @foreach (['BENCANA ALAM', 'GEMPA BUMI', 'TSUNAMI', 'HUJAN DERAS', 'KEBAKARAN'] as $category)
+                @php
+                $isActive = request('type') === $category;
+                @endphp
                 <div class="swiper-slide !w-auto">
-                    <div class="px-4 py-1 rounded-full bg-orange-600 text-white text-sm font-medium text-center">
+                    <a href="{{ url('/categories?type=' . urlencode($category)) }}"
+                        class="block px-4 py-1 rounded-full text-sm font-medium text-center border transition
+              {{ $isActive 
+                ? 'bg-white text-orange-600 border-orange-600' 
+                : 'bg-orange-600 text-white border-transparent hover:bg-orange-700' }}">
                         {{ $category }}
-                    </div>
+                    </a>
                 </div>
                 @endforeach
             </div>
