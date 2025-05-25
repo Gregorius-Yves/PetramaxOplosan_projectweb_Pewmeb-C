@@ -25,11 +25,11 @@ Group Name:
 - **Database**: MySQL
 - **Deployment**: Artisan, Laravel Serve, XAMPP
 
-## ⚙️ Getting Started
+## ⚙️ Installment
 
 ```bash
-git clone https://github.com/your-username/infobencanaid.git
-cd infobencanaid
+git clone https://github.com/Gregorius-Yves/proyek-pemweb-c
+cd proyek-pemweb-c
 
 # Create .env from scratch or use the example
 cp .env.example .env
