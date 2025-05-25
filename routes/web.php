@@ -12,6 +12,7 @@ Route::post('/register', [LoginQueryController::class, 'register']);
 Route::post('/logout', [LoginQueryController::class, 'logout']);
 Route::redirect('/laravel/login', '/login')->name('login');
 Route::redirect('/laravel/register', '/register')->name('register');
+Route::redirect('/laravel/logout', '/')->name('logout');
 
 Route::get('/', function () {
     return view('landing');
