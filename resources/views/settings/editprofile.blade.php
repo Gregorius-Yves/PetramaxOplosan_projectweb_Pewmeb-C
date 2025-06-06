@@ -39,10 +39,21 @@
                     <label for="password" class="block text-sm font-medium text-gray-700">Password Baru</label>
                     <input type="password" id="password" name="password" class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500" placeholder="Masukkan password baru">
                 </div>
+		<div class="flex justify-end items-center gap-4 mt-4">
+	<form action="{{ route('account.delete') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus akun?');">
+    	@csrf
+    	@method('DELETE')
+    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm">
+        Hapus Akun
+    </button>
+</form>
 
-                <div class="flex justify-end">
-                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">Simpan Perubahan</button>
-                </div>
+	</form>
+
+    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">
+        Simpan Perubahan
+    </button>
+</div>
             </form>
         </div>
     </main>
