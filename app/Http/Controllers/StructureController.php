@@ -28,5 +28,20 @@ class StructureController extends Controller
 
         return redirect()->route('structure.create')->with('success', 'Struktur berhasil ditambahkan.');
     }
+
+    public function index()
+    {
+    	$structures = \App\Models\Structure::latest()->get();
+    	return view('admin.structure.index', compact('structures'));
+    }
+
+    public function destroy($id)
+   {
+   	$structure = \App\Models\Structure::findOrFail($id);
+    	$structure->delete();
+
+    	return redirect()->route('structure.index')->with('success', 'Struktur berhasil dihapus.');
+}
+
 }
 

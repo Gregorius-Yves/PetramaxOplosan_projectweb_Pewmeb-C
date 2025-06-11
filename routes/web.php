@@ -6,6 +6,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\StructureController;
 
+Route::get('/admin/structure', [StructureController::class, 'index'])->name('structure.index');
+Route::get('/admin/structure/create', [StructureController::class, 'create'])->name('structure.create');
+Route::post('/admin/structure', [StructureController::class, 'store'])->name('structure.store');
+Route::delete('/admin/structure/{id}', [StructureController::class, 'destroy'])->name('structure.destroy');
 Route::get('/admin/structure/create', [StructureController::class, 'create'])->name('structure.create');
 Route::post('/admin/structure', [StructureController::class, 'store'])->name('structure.store');
 Route::delete('/account/delete', [AccountController::class, 'destroy'])->name('account.delete');
