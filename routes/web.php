@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginQueryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\StructureController;
 
+Route::get('/admin/structure/create', [StructureController::class, 'create'])->name('structure.create');
+Route::post('/admin/structure', [StructureController::class, 'store'])->name('structure.store');
 Route::delete('/account/delete', [AccountController::class, 'destroy'])->name('account.delete');
 Route::post('/profile/image/update', [ProfileController::class, 'updateProfileImage'])->name('profile.image.update');
 Route::get('/login', [LoginQueryController::class, 'showLogin'])->name('login');
