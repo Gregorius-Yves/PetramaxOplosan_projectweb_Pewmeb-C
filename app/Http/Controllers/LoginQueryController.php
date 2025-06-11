@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-
 class LoginQueryController extends Controller
 {
     public function showLogin() {
@@ -32,13 +31,18 @@ class LoginQueryController extends Controller
         ]);
 
         return redirect ('/login')->with('berhasil','Registrasi berhasil');
-
     }
 
     public function login(Request $request) {
         $credentials = $request->only('email','password');
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+
+            if ($user->name === 'admin') {
+                return redirect('/admin/structure/');
+            }
+
             return redirect('/explore');
         }
 
@@ -49,7 +53,4 @@ class LoginQueryController extends Controller
         Auth::logout();
         return redirect('/');
     }
-
-
-    
 }
