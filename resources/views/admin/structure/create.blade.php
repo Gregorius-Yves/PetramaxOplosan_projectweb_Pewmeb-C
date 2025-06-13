@@ -19,34 +19,41 @@
     <main class="flex-grow container mx-auto p-6">
         <div class="max-w-lg mx-auto bg-white p-6 shadow rounded">
             <h1 class="text-2xl font-bold text-orange-600 mb-6">Tambah Struktur Baru</h1>
+		<form action="{{ route('structure.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-            <form action="{{ route('structure.store') }}" method="POST">
-                @csrf
+    {{-- Name --}}
+    <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Nama Struktur</label>
+        <input type="text" id="name" name="name" required class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500">
+    </div>
 
-                {{-- Name --}}
-                <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-700">Nama Struktur</label>
-                    <input type="text" id="name" name="name" required class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500">
-                </div>
+    {{-- Description --}}
+    <div class="mb-4">
+        <label for="description" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+        <textarea id="description" name="description" rows="4" class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500"></textarea>
+    </div>
 
-                {{-- Description --}}
-                <div class="mb-4">
-                    <label for="description" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                    <textarea id="description" name="description" rows="4" class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500"></textarea>
-                </div>
+    {{-- Tags --}}
+    <div class="mb-4">
+        <label for="tags" class="block text-sm font-medium text-gray-700">Tags (pisahkan dengan koma)</label>
+        <input type="text" id="tags" name="tags" class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500">
+    </div>
 
-                {{-- Tags --}}
-                <div class="mb-6">
-                    <label for="tags" class="block text-sm font-medium text-gray-700">Tags (pisahkan dengan koma)</label>
-                    <input type="text" id="tags" name="tags" class="mt-1 block w-full border-gray-300 rounded shadow-sm focus:ring-orange-500 focus:border-orange-500">
-                </div>
+    {{-- Photo --}}
+    <div class="mb-6">
+        <label for="photo" class="block text-sm font-medium text-gray-700">Upload Gambar Struktur</label>
+        <input type="file" id="photo" name="photo" accept="image/*" class="mt-1 block w-full border-gray-300 rounded shadow-sm">
+    </div>
 
-                <div class="flex justify-end">
-                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">
-                        Simpan Struktur
-                    </button>
-                </div>
-            </form>
+    <div class="flex justify-end">
+        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">
+            Simpan Struktur
+        </button>
+    </div>
+</form>
+
+		
         </div>
     </main>
 

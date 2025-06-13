@@ -13,21 +13,22 @@ class StructureController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'tags' => 'nullable|string',
-        ]);
+{
+    $data = $request->validate([
+        'name' => 'required|string',
+        'description' => 'nullable|string',
+        'tags' => 'nullable|string',
+        'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ]);
 
-        Structure::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'tags' => $request->tags,
-        ]);
-
-        return redirect()->route('structure.create')->with('success', 'Struktur berhasil ditambahkan.');
+    if ($request->hasFile('photo')) {
+        $data['photo'] = $request->file('photo')->store('structures', 'public');
     }
+
+    Structure::create($data);
+
+    return redirect()->route('structure.index')->with('success', 'Struktur berhasil disimpan.');
+}
 
     public function index()
     {
