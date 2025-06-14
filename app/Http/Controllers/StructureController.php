@@ -44,5 +44,31 @@ class StructureController extends Controller
     	return redirect()->route('structure.index')->with('success', 'Struktur berhasil dihapus.');
 }
 
+	public function search(Request $request)
+{
+    $query = $request->input('q'); // from ?q=...
+    
+    $structures = Structure::query();
+
+    if ($query) {
+        $structures = $structures->where('name', 'LIKE', "%{$query}%")
+                                 ->orWhere('tags', 'LIKE', "%{$query}%")
+                                 ->orWhere('description', 'LIKE', "%{$query}%");
+    }
+
+    return view('structures.search', [
+        'structures' => $structures->get(),
+        'query' => $query
+    ]);
 }
+
+    public function show($id)
+{
+    $structure = Structure::findOrFail($id);
+    return view('structures.show', compact('structure'));
+}
+
+
+}
+
 
