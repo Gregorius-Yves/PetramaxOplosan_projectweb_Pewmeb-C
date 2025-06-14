@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
   <meta charset="utf-8" />
   <title>Map - inaRISK Web</title>
@@ -13,7 +13,6 @@
   <style>
     body, html { margin: 0; padding: 0; height: 100%; }
     #map { width: 100%; height: 100vh; }
-
     .layer-panel {
       position: absolute;
       top: 10px;
@@ -27,12 +26,10 @@
       font-size: 14px;
       z-index: 999;
     }
-
     .layer-panel h3 {
       margin-top: 0;
       color: orange;
     }
-
     .section { margin-bottom: 10px; }
     .section hr { border: 1px solid orange; }
     .section label { display: block; margin-bottom: 5px; }
@@ -94,7 +91,7 @@
 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 <script>
-  
+
   const map = L.map('map', {
     center: [-6.2, 106.8],
     zoom: 6,
@@ -105,32 +102,71 @@
     maxBoundsViscosity: 1.0
   });
 
-  map.setMaxBounds([
-    [-85, -180],
-    [85, 180] 
-  ]);
+  map.setMaxBounds([[-85, -180], [85, 180]]);
 
   const baseMaps = {
-    road: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
-    satellite: L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-      subdomains: ['mt0','mt1','mt2','mt3']
+    road: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }),
-    terrain: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png')
+    satellite: L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+      subdomains: ['mt0','mt1','mt2','mt3'],
+      attribution: '© Google'
+    }),
+    terrain: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenTopoMap contributors'
+    })
   };
 
   baseMaps.road.addTo(map);
 
   const hazardLayers = {
-    banjir: L.circle([ -6.2, 106.8 ], { radius: 30000, color: 'blue' }),
-    kekeringan: L.circle([ -6.5, 107.0 ], { radius: 30000, color: 'orange' }),
-    gempabumi: L.circle([ -6.3, 107.5 ], { radius: 30000, color: 'red' }),
-    longsor: L.circle([ -6.7, 107.2 ], { radius: 30000, color: 'brown' })
+    banjir: L.geoJSON({
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [106.8, -6.2]
+        },
+        "properties": { "name": "Banjir" }
+      }]
+    }).addTo(map),
+    kekeringan: L.geoJSON({
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.0, -6.5]
+        },
+        "properties": { "name": "Kekeringan" }
+      }]
+    }).addTo(map),
+    gempabumi: L.geoJSON({
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.5, -6.3]
+        },
+        "properties": { "name": "Gempabumi" }
+      }]
+    }).addTo(map),
+    longsor: L.geoJSON({
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [107.2, -6.7]
+        },
+        "properties": { "name": "Tanah Longsor" }
+      }]
+    }).addTo(map)
   };
 
-  hazardLayers.banjir.addTo(map);
-
   function applyLayers() {
-
     const selectedBase = document.querySelector('input[name="basemap"]:checked').value;
     map.eachLayer(layer => map.removeLayer(layer));
     baseMaps[selectedBase].addTo(map);
